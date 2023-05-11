@@ -14,3 +14,10 @@ class GeneralException implements Exception {
     this.message = "Ocorreu um erro. Tente novamente",
   });
 }
+
+class AudioPlayerException implements Exception {
+  final String message;
+  AudioPlayerException({
+    required this.message,
+  });
+}
