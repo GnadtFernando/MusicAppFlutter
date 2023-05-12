@@ -18,8 +18,10 @@ class GenreListScreen extends StatelessWidget {
     final musicPlayerController = Get.find<MusicPlayerController>();
     return Obx(
       () => ScreenWidget(
-        isLoading: false,
+        isLoading: genreListContrl.getIsLoading,
         title: 'Lista de Gêneros',
+        error: genreListContrl.getError,
+        onTryAgain: () => genreListContrl.getGenreList(),
         child: Column(
           children: [
             Expanded(
