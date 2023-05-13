@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
 import 'package:music_app_flutter/shared/featues/music_player/presentation/widgets/music_player_controls/widgets/play_pause_button_widgets.dart';
 
@@ -37,23 +38,25 @@ class MiniMusicPlayerWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                    child: Row(
-                      children: [
-                        ImageWidget(
-                          width: 50,
-                          height: 50,
-                          img:
-                              musicPlayerController.getCurrentPlayingMusic?.img,
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: TextWidget.normal(
-                            musicPlayerController
-                                    .getCurrentPlayingMusic?.title ??
-                                'Música 1',
+                    child: Obx(
+                      () => Row(
+                        children: [
+                          ImageWidget(
+                            width: 50,
+                            height: 50,
+                            img: musicPlayerController
+                                .getCurrentPlayingMusic?.img,
                           ),
-                        ),
-                      ],
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: TextWidget.normal(
+                              musicPlayerController
+                                      .getCurrentPlayingMusic?.title ??
+                                  'Música 1',
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   PlayPauseButtonWidgets(
