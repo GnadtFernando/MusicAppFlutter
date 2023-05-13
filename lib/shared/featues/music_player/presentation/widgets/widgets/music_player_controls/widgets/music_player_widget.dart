@@ -5,6 +5,10 @@ import 'dart:ui';
 
 import 'package:music_app_flutter/shared/models/music_model.dart';
 
+import 'music_player_controls_widget.dart';
+import 'music_player_music_duration.dart';
+import 'music_player_music_info.dart';
+
 class MusicPlayerWidget extends StatelessWidget {
   final MusicModel music;
   const MusicPlayerWidget({super.key, required this.music});
@@ -28,6 +32,12 @@ class MusicPlayerWidget extends StatelessWidget {
                   onPressed: Get.back,
                   icon: const Icon(Icons.arrow_downward_outlined),
                   color: MusicAppColors.secondaryColor,
+                ),
+                MusicPlayerMusicInfo(music: music),
+                const SizedBox(height: 24),
+                MusicPlayerMusicDuration(duration: music.duration),
+                MusicPlayerControlsWidget(
+                  musicPath: music.url,
                 ),
               ],
             ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/instance_manager.dart';
-import 'package:music_app_flutter/shared/featues/music_player/presentation/widgets/music_player_controls/widgets/play_pause_button_widgets.dart';
+import 'package:music_app_flutter/shared/featues/music_player/presentation/widgets/widgets/music_player_controls/widgets/play_pause_button_widgets.dart';
 
 import '../../../../../core/app/music_app_colors.dart';
 import '../../../../widgets/image_widget.dart';
